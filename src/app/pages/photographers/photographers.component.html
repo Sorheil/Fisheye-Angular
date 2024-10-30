@@ -1,0 +1,8 @@
+<main id="main-content" aria-labelledby="photographers-title" tabindex="-1" >
+    <h1 id="photographers-title">Nos photographes</h1>
+    <div class="photographers-wrapper">
+        @for (photographer of photographers; track photographer.getId()) {
+        <app-photographerprofile [photographerData]="photographer" />
+        }
+    </div>
+</main>

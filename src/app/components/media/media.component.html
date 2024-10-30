@@ -1,0 +1,24 @@
+<div class="media-card">
+    <!-- ce lien ouvre une lightbox -->
+    <a href="#" (click)="openLightbox(media.getId() , $event)">
+        @if (media.getImage()) {
+        <img src="./assets/images/creations/{{media.getPhotographerId()}}/{{media.getImage()}}" alt="{{media.title}}">
+        }@else {
+        <div class="video-container">
+            <video [attr.aria-label]="media.getDescription()">
+                <source src="./assets/images/creations/{{media.getPhotographerId()}}/{{media.getVideo()}} "
+                    type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24">
+                <path d="M8 5.14v14l11-7z"  aria-label="likes"/>
+            </svg>
+        </div>
+        }
+    </a>
+
+    <div class="media-card__description">
+        <p class="title">{{media.getTitle()}}</p>
+        <app-like [numberLikes]="numberLikes" />
+    </div>
+</div>

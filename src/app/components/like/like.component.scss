@@ -1,0 +1,17 @@
+@import './../../../styles.scss';
+
+.wrapper-likes {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+svg {
+    transition: fill 0.3s;
+    fill: gray;
+
+}
+
+.liked {
+    fill: $primary-color-dark;
+}

@@ -1,0 +1,57 @@
+<div class="modal" #modal [ngClass]="{'modal-close': !isModalOpen, 'modal-show': isModalOpen}">
+    <form action="#" class="modal-form" role="dialog" aria-labelledby="modal-title" (ngSubmit)="onSubmitForm(form)"
+        #form="ngForm">
+        <h1 id="modal-title">Contactez-moi<br>{{photographerName}}</h1>
+
+        <div *ngIf="formErrorMessage" class="error-message global-error">
+            {{ formErrorMessage }}
+        </div>
+        
+        <div class="form-data">
+            <div class="form-prename">
+                <label for="First name">Prénom</label>
+                <input type="text" id="First name" name="firstName" required aria-required="true"
+                    [(ngModel)]="firstName" #firstNameModel="ngModel" />
+                <div *ngIf="isFieldInvalid(firstNameModel)" class="error-message">
+                    Le prénom est requis.
+                </div>
+            </div>
+
+            <div class="form-name">
+                <label for="Last name">Nom</label>
+                <input type="text" id="Last name" name="lastName" required aria-required="true" [(ngModel)]="lastName"
+                    #lastNameModel="ngModel" />
+                <div *ngIf="isFieldInvalid(lastNameModel)" class="error-message">
+                    Le nom est requis.
+                </div>
+            </div>
+
+            <div class="form-mail">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-required="true" [(ngModel)]="email"
+                    #emailModel="ngModel" email />
+                <div *ngIf="isFieldInvalid(emailModel)" class="error-message">
+                    <span *ngIf="emailModel.errors?.['required']">L'email est requis.</span>
+                    <span *ngIf="emailModel.errors?.['email']">Entrez un email valide.</span>
+                </div>
+
+            </div>
+
+            <div class="form-message">
+                <label for="Your message">Votre message</label>
+                <textarea id="Your message" name="message" required aria-required="true" [(ngModel)]="message"
+                    #messageModel="ngModel"></textarea>
+                <div *ngIf="isFieldInvalid(messageModel)" class="error-message">
+                    Le message est requis.
+                </div>
+            </div>
+        </div>
+        <button class="btn-submit" type="submit" aria-label="send">Envoyer</button>
+        <button class="close-popup" type="button" aria-label="Close Contact form" (click)="closeModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24">
+                <path
+                    d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
+            </svg>
+        </button>
+    </form>
+</div>

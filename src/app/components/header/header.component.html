@@ -1,0 +1,12 @@
+<header class="header">
+    <a href="/" routerLink="" class="header__logo">
+        <img src="./assets/images/logo.png" alt="Fisheye Home page">
+    </a>
+    <nav class="header__tags" aria-label="photographer categories" *ngIf="isRouteActive('/')">
+        <!-- list of tags -->
+        @for (tagitem of tags; track $index) {
+        <app-tag [tagName]="tagitem" (tagSelected)="onTagSelected(tagitem)" [isSelected]="isTagSelected(tagitem)" />
+        }
+
+    </nav>
+</header>

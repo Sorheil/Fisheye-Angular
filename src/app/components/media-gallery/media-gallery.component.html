@@ -1,0 +1,5 @@
+<section class="wrapper-media-cards ">
+    @for (media of medias; track media.getId()) {
+    <app-media [media]="media" />
+    }
+</section>

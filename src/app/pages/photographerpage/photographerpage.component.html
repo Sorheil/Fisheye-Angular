@@ -1,0 +1,11 @@
+<main>
+    <app-photographerheader [photographer]="photographer" [tags]="tags" />
+    <app-counterlikesandtarif [price]="price" [numberLikes]="numberLikes" />
+    <div class="dropdown-section">
+        <label for="sortOptions" id="Order by">Trier par</label>
+        <app-dropdownsort />
+    </div>
+    <app-media-gallery [medias]="medias" id="main-content" tabindex="-1" />
+    <app-modalform [photographerName]="photographerName" />
+    <app-lightboxmodal />
+</main>

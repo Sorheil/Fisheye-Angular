@@ -1,0 +1,29 @@
+<div class="dropdown" aria-labelledby="Order by">
+    <!-- Le bouton qui affiche l'option sélectionnée -->
+    <button class="dropdown__btn" id="sortOptions" aria-labelledby="sortLabel" aria-label="popularité"
+        [attr.aria-selected]="selectedOption === 'popularité'" (click)="selectOption('popularité')">
+        Popularité
+    </button>
+
+    <!-- Bouton de basculement pour afficher/masquer les options -->
+    <button class="dropdown__btn-toggle" (click)="toggleContent()" aria-haspopup="listbox"
+        [attr.aria-expanded]="isShowContent" aria-labelledby="sortLabel">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" title="chevron-down"
+            [ngClass]="{'rotate': isRotate}">
+            <path fill="currentColor" fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414"
+                clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Liste des options (role=listbox) -->
+    <ul class="dropdown__content" role="listbox" [ngClass]="{'show': isShowContent}" aria-labelledby="sortOptions">
+        <li role="option" [attr.aria-selected]="selectedOption === 'Date'">
+            <button class="dropdown__btn dropdown__btn--content" (click)="selectOption('Date')">Date</button>
+        </li>
+        <li role="option" [attr.aria-selected]="selectedOption === 'Titre'">
+            <button class="dropdown__btn dropdown__btn--content" (click)="selectOption('Titre')">Titre</button>
+        </li>
+    </ul>
+</div>

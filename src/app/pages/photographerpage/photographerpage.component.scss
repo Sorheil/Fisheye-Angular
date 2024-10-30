@@ -1,0 +1,30 @@
+main {
+    width: 100%;
+    position: absolute;
+    top: calc(42px + 50px);
+    padding: 42px 100px;
+}
+
+.dropdown-section {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+
+    label {
+        font-size: 18px;
+        font-family: DM Sans;
+        font-weight: 700;
+
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    main {
+        padding: 42px 20px;
+    }
+
+    .dropdown-section {
+        display: none;
+    }
+}

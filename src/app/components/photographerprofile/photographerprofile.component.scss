@@ -1,0 +1,67 @@
+@import '../../../styles';
+
+.photographer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: DM Sans;
+    text-align: center;
+    font-weight: 400;
+
+    &__portrait {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__name {
+        font-size: 36px;
+        line-height: 46.87px;
+        white-space: nowrap;
+        color: $primary-color-light;
+
+    }
+
+    &__description {
+        margin-bottom: 10px;
+
+        .city {
+            font-size: 13px;
+            line-height: 16.93px;
+            text-align: center;
+            color: $primary-color-dark;
+            font-weight: normal;
+
+        }
+
+        .tagline {
+            font-size: 15px;
+            line-height: 13.02px;
+            text-wrap: nowrap;
+            font-weight: normal;
+        }
+
+        .price {
+            font-size: 15px;
+            line-height: 11.72px;
+            color: $secondary-color-medium;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 8px;
+        row-gap: 12px;
+    }
+}

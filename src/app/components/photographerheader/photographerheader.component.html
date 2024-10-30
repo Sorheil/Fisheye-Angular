@@ -1,0 +1,23 @@
+<header class="photographer__header">
+    <div class=" photographer__header--left">
+        <div class="photographer__profil">
+            <h1 class="photographer__name"> {{photographer?.getName()}}</h1>
+            <p> <span class="photographer__location"> {{photographer?.getCity()}},{{photographer?.getCountry()}}</span>
+                <br>
+                <span class="photographer__tagline">{{photographer?.getTagline()}}</span>
+            </p>
+            <div class="photographer__tags">
+                @for (tag of tags; track $index) {
+                <app-tag [tagName]="tag" (tagSelected)="onTagSelected(tag)" />
+                }
+
+            </div>
+        </div>
+        <app-cta />
+
+    </div>
+    <!-- image -->
+    <div class="photographer__header--right">
+        <img [src]="'./assets/images/profil/' + photographer?.getPortrait()" [alt]="photographer?.getName()">
+    </div>
+</header>

@@ -1,0 +1,24 @@
+<div class="photographer">
+    <a [routerLink]="['/photographer', photographerData.id]" class="photographer__portrait"
+        [attr.aria-label]="photographerData.name">
+        <img src="./assets/images/profil/{{photographerData.portrait}}" class="photographer__image">
+        <h2  class="photographer__name">{{photographerData.name}}</h2>
+    </a>
+    <p class="photographer__description">
+        <span class="city">{{photographerData.city}}, {{photographerData.country}} </span>
+        <br>
+        <span class="tagline">
+            {{photographerData.tagline}}
+        </span>
+        <br>
+        <span class="price">
+            {{photographerData.price}}€/jour
+        </span>
+    </p>
+    <!-- link to tagged photographers -->
+    <div class="photographer__tags">
+        @for (tag of photographerData.tags; track $index) {
+        <app-tag tagName={{tag}} (tagSelected)="onTagSelected(tag)" [isSelected]="isTagSelected(tag)" />
+        }
+    </div>
+</div>

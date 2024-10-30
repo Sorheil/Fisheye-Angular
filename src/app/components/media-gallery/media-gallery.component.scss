@@ -1,0 +1,15 @@
+.wrapper-media-cards {
+    display: grid;
+    // width: 100%;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, auto);
+    gap: 50px;
+    margin-top: 70px;
+
+    @media screen and (max-width:768px) {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1, auto);
+        gap: 20px;
+    }
+}

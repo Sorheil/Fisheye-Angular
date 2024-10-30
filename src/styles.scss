@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+// primary colors
+$primary-color-dark: #901C1C;
+$primary-color-light: #D3573C;
+
+// secondary colors
+$secondary-color-dark: #D3573C;
+$secondary-color-medium: #525252;
+$secondary-color-light: #FAFAFA;
+$secondary-color-red: #901C1C;
+
+//font
+$primary-font :"DM Sans",
+sans-serif;
+
+// link style
+a {
+    text-decoration: none;
+    color: black;
+}
+
+//global style for html element
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "DM Sans",
+        sans-serif;
+    font-weight: normal;
+}
+
+
+li {
+    list-style: none;
+    display: inline;
+}
+
+//accessibility
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+// modals
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-show {
+    display: flex;
+}
+
+.error-message {
+    color: $primary-color-dark;
+    font-size: 20px;
+    margin-top: 4px;
+}

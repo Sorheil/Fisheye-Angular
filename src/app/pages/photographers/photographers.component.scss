@@ -1,0 +1,35 @@
+main h1 {
+    position: absolute;
+    right: 0;
+    padding: 42px 100px;
+    font-family: DM Sans;
+    font-size: 36px;
+    font-weight: 400;
+    color: #901C1C;
+}
+
+.photographers-wrapper {
+    display: grid;
+    width: 100%;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 280px);
+    padding: 273px 72px 60px;
+    row-gap: 50px;
+}
+
+@media screen and (max-width:767px) {
+
+    main h1 {
+        font-size: 14px;
+        line-height: 18.23px;
+        padding: 52px 0px;
+        right: 20px;
+    }
+
+    .photographers-wrapper {
+        grid-template-columns: repeat(1, auto);
+        row-gap: 40px;
+        justify-content: center;
+    }
+
+}

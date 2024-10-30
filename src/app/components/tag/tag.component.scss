@@ -1,0 +1,16 @@
+@import'./../../../styles.scss';
+
+.tag {
+    padding: 5px 8px;
+    border-radius: 32px;
+    border: 0.5px solid #C4C4C4;
+    color: #901C1C;
+    font-weight: bold;
+    font-size: 12px;
+
+    &:hover,
+    &.selected {
+        background-color: #901C1C;
+        color: white;
+    }
+}

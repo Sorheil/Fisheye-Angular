@@ -1,0 +1,2 @@
+j'ai rencontrer un probleme l'ors de la mise en place de l'appel api
+bien verifier l'accessibilte dans la page de phohtographes au niveau des filtres 

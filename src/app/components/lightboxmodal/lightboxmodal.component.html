@@ -1,0 +1,38 @@
+<div class="modal" #modal [ngClass]="{'modal-close': !isModalOpen, 'modal-show': isModalOpen}">
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="image closeup view">
+        <div class="media-container">
+            <!-- Afficher l'image ou la vidéo en fonction du type -->
+            @if (medias) {
+            @if(medias[curentIndexMedia].getImage()){
+            <img id="lightbox-img" [src]="getCurrentMediaSrc()" [alt]="medias[curentIndexMedia].getDescription()" />
+            }@else {
+            <video id="lightbox-video" [src]="getCurrentMediaSrc()" controls></video>
+            }
+            <p id="lightbox-title">{{ medias[curentIndexMedia].getTitle() }}</p>
+            }
+            @else{
+            <div aria-busy=""></div>
+            }
+        </div>
+
+        <!-- Boutons de navigation et de fermeture -->
+        <button id="close-lightbox" class="close-lightbox" aria-label="Close dialog" (click)="closeLightbox()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
+            </svg>
+        </button>
+
+        <a id="prev-media" href="#" class="nav-button" aria-label="previous-image" (click)="prevMedia($event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6l6 6z" />
+            </svg>
+        </a>
+
+        <a id="next-media" href="#" class="nav-button" aria-label="Next-image" (click)="nextMedia($event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z" />
+            </svg>
+        </a>
+    </div>
+</div>
